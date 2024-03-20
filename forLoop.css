@@ -1,4 +1,4 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,15 +6,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #333333;
+    background-color:#333333 ;
     font-size: xx-large;
+    overflow: hidden;
 }
 
-.table {
-    position: relative;
+.table{
     font-size: medium;
 }
-
 .container1 {
     display: flex;
     height: 80vh;
@@ -25,7 +24,7 @@ body {
     display: flex;
     align-items: center;
     width: 50%;
-    background-color: #1E1E1E;
+    background-color:#1E1E1E;
     padding: 20px;
     border-radius: 10px;
     color: #BB86A1;
@@ -35,7 +34,7 @@ body {
     font-size: 20px;
 }
 
-.table {
+.table  {
     background-color: #1E1E1E;
     width: 50%;
     padding: 20px;
@@ -45,7 +44,7 @@ body {
     font-family: monospace;
 }
 
-.time-header {
+.time-header{
     height: 5vh;
     padding-left: 2%;
     visibility: hidden;
@@ -53,7 +52,6 @@ body {
     color: palegreen;
     font-family: monospace;
 }
-
 .time-complexity {
     background-color: #1E1E1E;
     color: palegreen;
@@ -77,7 +75,7 @@ body {
 }
 
 #inputForm input[type="submit"] {
-    padding: 8px 40px; /* Increase padding to make button bigger */
+    padding: 10px 20px;
     color: #BB86A1;
     border: none;
     border-radius: 5px;
@@ -85,40 +83,10 @@ body {
     transition: all 0.3s ease;
     font-family: monospace;
     background-color: #1E1E1E;
-    font-size: large; /* Increase font size */
-    font-weight: bold; /* Make text bold */
 }
 
 #inputForm input[type="submit"]:hover {
     background-color: #474747;
-}
-
-/* Styling for table headers */
-th {
-    background-color: #474747;
-    color: #BB86A1;
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Styling for table headers on hover */
-th:hover {
-    background-color: #333333;
-    cursor: pointer;
-}
-
-/* CSS for table data */
-td {
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
-}
-
-/* CSS for highlighting values in table */
-td.highlight {
-    background-color: yellow;
 }
 
 /* Add some margin to elements */
@@ -132,9 +100,7 @@ td.highlight {
 }
 
 /* Highlight individual parts of the code */
-.initialize,
-.condition,
-.updation {
+.initialize , .condition , .updation {
     color: #9CD9FE;
 }
 
@@ -142,34 +108,102 @@ td.highlight {
     color: #2383be;
 }
 
-.brackets {
+.brackets{
     color: #D7BF09;
 }
 
-.content-footer {
-    position: absolute;
-    background-color: #333333;
-    color: palegreen;
-    width: 94%;
-    bottom: 10%;
-    margin: 0 auto;
-    border-radius: 10px;
-    height: 12vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: monospace;
-    z-index: 1;
-    text-align: center;
-}
-
-i {
+.algorithm i{
     position: absolute;
     left: 95vh;
-    top: 6vh;
+    top:6vh;
     font-size: 2vw;
     cursor: pointer;
     color: white;
+}
+
+.menu{
+    height: 100vh;
+    width: 410px;
+    background-color: #3333336e;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: left;
+    justify-content: center;
+    top: 0%;
+    transition: 0.5s ease-in-out;
+    transform: translateX(0px);
+    backdrop-filter: blur(0px);
+    padding-left: 30px;
+}
+
+.menu.blurred {
+    backdrop-filter: blur(3px);
+}
+
+.menu a{
+    font-family: monospace;
+    text-transform: uppercase;
+    color: #c500737a;
+    text-decoration: none;
+    font-size: 3vw;
+    position: relative;
+    width: fit-content;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px; 
+    background-color: yellowgreen; 
+    transition: width 0.3s ease; 
+    border-radius: 5px; 
+}
+
+.menu a:hover::after {
+    width: 100%; 
+}
+
+.table i{
+    position: absolute;
+    left: 93vh;
+    top:2vh;
+    font-size: 2vw;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.menu_icon_box{
+    z-index: 2;
+    width: fit-content;
+    height: auto;
+    margin: 30px;
+    position: absolute;
+    border-radius: 4px;
+    cursor: pointer;
+    top: -2vh;
+    left: 86vh;
+    z-index: 999;
+}
+.line1 , .line2 , .line3{
+    width: 30px;
+    height: 2px;
+    margin: 8px 2px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    transition: 0.2s;
+}
+
+.active .line1{
+    transform: translate(0px , 15px)rotate(45deg);
+}
+.active .line2{
+    opacity: 0;
+}
+.active .line3{
+    transform: translate(0px , -6px)rotate(-45deg);
 }
